@@ -1,0 +1,22 @@
+length=15;
+m=(length-1)/2;
+n=-m:m;
+wrect=ones(1,length);
+whann=.5*(1+cos((pi.*n)/m));
+whamm=.54+.46*cos((pi.*n)/m);
+wblack=.42+.5*cos((pi.*n)/m)+0.08*cos((2*pi.*n)/m);
+
+[h0,w0]=freqz(wrect,1,256,'whole');
+[h1,w1]=freqz(whann
+
+
+subplot(4,3,1),plot(n,wrect);
+title('wrect');
+subplot(4,3,2),plot(n,whann);
+title('whann');
+subplot(4,3,3),plot(n,whamm);
+title('whamm');
+subplot(4,3,4),plot(n,wblack);
+title('wblack');
+subplot(4,3,5),plot(w,abs(h));
+title('magnitude rectangle');
